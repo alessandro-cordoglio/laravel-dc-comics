@@ -27,6 +27,7 @@
                   <td> {{$comic->sale_date}} </td>
                   <td> {{$comic->type}} </td>
                   <td><a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Espandi</a></td>
+                  <td><a href="{{route('comics.edit', $comic->id)}}" class="btn btn-warning">Modifica</a></td>
                 </tr>
                 @endforeach
             </tbody>

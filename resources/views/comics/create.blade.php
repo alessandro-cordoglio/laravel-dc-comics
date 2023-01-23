@@ -8,6 +8,10 @@
     <form class="p-5" action="{{route('comics.store')}}" method="POST">
     @csrf
     <div class="mb-3">
+        <label for="thumb" class="form-label">Copertina(URL)</label>
+        <input type="text" class="form-control" id="thumb" name="thumb" style="width: 30rem">
+    </div>
+    <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>
         <input type="text" class="form-control" id="title" name="title" maxlength="100" style="width: 30rem" required>
     </div>
@@ -22,8 +26,8 @@
     <div class="mb-3">
         <label for="type">Tipologia</label>
         <select class="form-select" name="type" style="width: 10rem" aria-label="Default select example" required>
-            <option value="comic_book">comic book</option>
-            <option value="graphic_novel">graphic novel</option>
+            <option value="comic book">comic book</option>
+            <option value="graphic novel">graphic novel</option>
         </select>
     </div>
     <div class="mb-3">
