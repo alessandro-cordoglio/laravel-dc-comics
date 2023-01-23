@@ -12,7 +12,7 @@
                 <th scope="col">Prezzo</th>
                 <th scope="col">Serie</th>
                 <th scope="col">Anno di vendita</th>
-                <th scope="col">genere</th>
+                <th scope="col">Tipologia</th>
               </tr>
             </thead>
             <tbody>
@@ -31,5 +31,6 @@
                 @endforeach
             </tbody>
           </table>
+          <a class="m-3 btn btn-secondary" href="{{route('comics.create')}}">Aggiungi un comics</a>
     </div>
 @endsection
