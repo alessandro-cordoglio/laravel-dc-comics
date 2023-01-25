@@ -6,22 +6,31 @@
     </div>
 
     <form class="p-5" action="{{route('comics.store')}}" method="POST">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     @csrf
     <div class="mb-3">
         <label for="thumb" class="form-label">Copertina(URL)</label>
-        <input type="text" class="form-control" id="thumb" name="thumb" style="width: 30rem">
+        <input type="text" class="form-control" id="thumb" name="thumb" style="width: 30rem" value="{{old('thumb')}}">
     </div>
     <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>
-        <input type="text" class="form-control" id="title" name="title" maxlength="100" style="width: 30rem" required>
+        <input type="text" class="form-control" id="title" name="title" maxlength="100" style="width: 30rem" value="{{old('title')}}" required>
     </div>
     <div class="mb-3">
         <label for="price" class="form-label">Prezzo</label>
-        <input type="number" class="form-control" id="price" name="price" min="1" max="500.99" step=".01" style="width: 30rem" required>
+        <input type="number" class="form-control" id="price" name="price" min="1" max="500.99" step=".01" value="{{old('price')}}" style="width: 30rem" required>
     </div>
     <div class="mb-3">
         <label for="series" class="form-label">Serie</label>
-        <input type="text" class="form-control" id="series" name="series" maxlength="100" style="width: 30rem" required>
+        <input type="text" class="form-control" id="series" name="series" maxlength="100" style="width: 30rem" value="{{old('series')}}" required>
     </div>
     <div class="mb-3">
         <label for="type">Tipologia</label>
@@ -32,10 +41,10 @@
     </div>
     <div class="mb-3">
         <label for="sale_date" class="form-label">Anno di vendita</label>
-        <input type="date" class="form-control" id="sale_date" name="sale_date" style="width: 10rem" required>
+        <input type="date" class="form-control" id="sale_date" name="sale_date" style="width: 10rem" value="{{old('sale_date')}}" required>
     </div>
     <div class="form-floating">
-        <textarea class="form-control" placeholder="Lascia una piccola descrizione" id="description" name="description" style="width: 30rem"></textarea>
+        <textarea class="form-control" placeholder="Lascia una piccola descrizione" id="description" name="description" style="width: 30rem">{{old('title')}}</textarea>
         <label for="description">Piccola descrizione</label>
     </div>
 
